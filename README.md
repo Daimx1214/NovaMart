@@ -40,11 +40,6 @@ npm install
 npm run dev
 ```
 
-### Credentials for Demo Testing
-| Account Role | Email Address | Password |
-|---|---|---|
-| **Store Admin** | `daimx1214@gmail.com` | `Daimali@1214` |
-| **Customer** | `ali@gmail.com` | `user123` |
 
 ---
 

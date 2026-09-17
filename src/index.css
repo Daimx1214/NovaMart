@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+  ============================================================
+  SHOPLY — COLOR SYSTEM (Tailwind palette reference)
+  ============================================================
+  One consistent, e-commerce-appropriate palette is used across
+  every page. Nothing here changes Tailwind's behavior — it's a
+  reference so any future page/component stays consistent.
+
+  BRAND / PRIMARY (emerald)
+    emerald-600  -> primary actions: buttons (Add to cart, Place
+                    order, Sign up, Save), active nav/tab state,
+                    links, logo
+    emerald-700  -> hover state of primary buttons
+    emerald-50   -> soft success/info backgrounds (selected payment
+                    method, "delivered" badge, "paid" badge, success
+                    banners)
+
+  NEUTRAL / BASE (slate)
+    slate-50     -> page background
+    white        -> cards, navbar, inputs
+    slate-800    -> headings, primary text, prices
+    slate-600    -> body text
+    slate-500    -> secondary/meta text (labels, captions)
+    slate-400    -> placeholder/disabled text, subtle hints
+    slate-200/300-> borders, dividers
+    slate-100    -> subtle section backgrounds, hover backgrounds
+
+  RATINGS
+    amber-500    -> star ratings (★) everywhere (product card,
+                    product detail, reviews)
+
+  STATUS COLORS (order lifecycle — used only for status badges)
+    amber-600 / amber-50   -> pending / waiting for approval
+    blue-600 / blue-50     -> confirmed
+    indigo-600 / indigo-50 -> shipped
+    emerald-600 / emerald-50 -> delivered / paid  (matches brand)
+    red-500 / red-50       -> cancelled / errors / destructive
+                               actions (Remove, Delete, validation
+                               errors)
+
+  Rule of thumb: emerald = brand & positive/primary action,
+  slate = structure & text, amber = rating stars + "pending",
+  red = destructive/error, blue & indigo = informational order
+  states only.
+  ============================================================
+*/

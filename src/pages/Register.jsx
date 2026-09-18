@@ -54,41 +54,37 @@ function Register() {
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center p-4 py-12">
-      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">
-        {/* Left Side Aesthetic Showcase */}
-        <div className="bg-gradient-to-tr from-slate-900 via-emerald-950 to-slate-900 text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden hidden md:flex">
-          <div className="relative z-10">
-            <Logo size="lg" light showSubtitle />
+      <div className="bg-white rounded-2xl border border-ink-200/90 shadow-md overflow-hidden max-w-4xl w-full grid md:grid-cols-2">
+        {/* Left Side Panel */}
+        <div className="bg-brand-50 text-ink-900 p-8 sm:p-12 flex flex-col justify-between hidden md:flex border-r border-brand-100">
+          <div>
+            <Logo size="lg" showSubtitle />
           </div>
 
-          <div className="space-y-4 relative z-10 my-auto py-8">
-            <span className="bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/30">
-              Join Shoply Today
-            </span>
-            <h2 className="text-3xl font-extrabold leading-tight">
-              Start Shopping With Exclusive Member Benefits
+          <div className="space-y-4 my-auto py-8">
+            <h2 className="text-3xl font-bold leading-tight font-heading text-ink-900">
+              Join NoveMart
             </h2>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Create an account in seconds to save delivery addresses, view real-time order tracking, and receive member discount alerts.
+            <p className="text-ink-600 text-sm leading-relaxed">
+              Create an account to save delivery addresses, track orders in real time, and hear about member discounts first.
             </p>
           </div>
 
-          <div className="relative z-10 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            ✓ 100% Free Account Registration
+          <div className="pt-4 border-t border-brand-100 text-xs text-ink-500">
+            Free to join, no card required
           </div>
         </div>
 
         {/* Right Side Form Panel */}
         <div className="p-8 sm:p-12 flex flex-col justify-center">
           <div className="mb-6 space-y-1">
-            <h1 className="text-2xl font-bold text-slate-800">Create New Account</h1>
-            <p className="text-xs text-slate-500">Fill in your details below to register.</p>
+            <h1 className="text-2xl font-bold text-ink-900 font-heading">Create an account</h1>
+            <p className="text-xs text-ink-500">Fill in your details below to register.</p>
           </div>
 
           {serverError && (
-            <div className="mb-4 p-3 rounded-xl bg-red-50 text-red-600 text-xs font-medium border border-red-100 flex items-center gap-2">
-              <span>⚠️</span>
-              <span>{serverError}</span>
+            <div className="mb-4 p-3 rounded-lg bg-rose-50 text-rose-600 text-xs font-medium border border-rose-100">
+              {serverError}
             </div>
           )}
 
@@ -128,7 +124,7 @@ function Register() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-9 text-xs text-slate-400 hover:text-slate-600 font-medium"
+                className="absolute right-3 top-9 text-xs text-ink-400 hover:text-ink-600 font-medium"
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
@@ -137,15 +133,15 @@ function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-all shadow-md shadow-emerald-500/20 disabled:opacity-50 mt-2"
+              className="w-full bg-brand-600 text-white font-semibold py-3 rounded-lg hover:bg-brand-700 transition-colors shadow-xs disabled:opacity-50 mt-2 text-sm"
             >
-              {loading ? "Creating Account..." : "Create Account →"}
+              {loading ? "Creating Account..." : "Create Account"}
             </button>
           </form>
 
-          <p className="mt-8 text-center text-xs text-slate-500">
+          <p className="mt-8 text-center text-xs text-ink-500">
             Already have an account?{" "}
-            <Link to="/login" className="font-bold text-emerald-600 hover:underline">
+            <Link to="/login" className="font-bold text-brand-600 hover:underline">
               Log in here
             </Link>
           </p>

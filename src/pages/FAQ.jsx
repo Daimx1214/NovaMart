@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 function FAQ() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -42,13 +43,10 @@ function FAQ() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-        <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
-          Help Center
-        </span>
-        <h1 className="text-3xl font-extrabold text-slate-800 tracking-tight sm:text-4xl">
-          Frequently Asked Questions
+        <h1 className="text-3xl sm:text-4xl font-bold text-ink-900 tracking-tight font-heading">
+          Frequently asked questions
         </h1>
-        <p className="text-slate-500 text-sm">
+        <p className="text-ink-500 text-sm">
           Everything you need to know about ordering, shipping, payments, and returns.
         </p>
       </div>
@@ -65,10 +63,10 @@ function FAQ() {
           <button
             key={c.id}
             onClick={() => setActiveCategory(c.id)}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
               activeCategory === c.id
-                ? "bg-emerald-600 text-white shadow-md shadow-emerald-500/20"
-                : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+                ? "bg-brand-600 text-white shadow-xs"
+                : "bg-white text-ink-600 border border-ink-200/90 hover:bg-ink-50"
             }`}
           >
             {c.label}
@@ -77,25 +75,25 @@ function FAQ() {
       </div>
 
       {/* Accordion FAQ List */}
-      <div className="space-y-4">
+      <div className="space-y-3">
         {filteredFaqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
             <div
               key={faq.question}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all"
+              className="bg-white rounded-xl border border-ink-200/90 overflow-hidden shadow-xs transition-all"
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-800 hover:text-emerald-600 transition-colors"
+                className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-ink-900 hover:text-brand-600 transition-colors font-heading text-sm sm:text-base"
               >
                 <span>{faq.question}</span>
-                <span className={`h-7 w-7 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 transition-transform ${isOpen ? "rotate-180 bg-emerald-100 text-emerald-700" : ""}`}>
-                  ↓
+                <span className={`h-7 w-7 rounded-lg bg-ink-100 flex items-center justify-center text-ink-500 transition-transform duration-200 ${isOpen ? "rotate-180 bg-brand-100 text-brand-700" : ""}`}>
+                  <ChevronDown className="w-4 h-4" />
                 </span>
               </button>
               {isOpen && (
-                <div className="px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                <div className="px-5 pb-5 text-sm text-ink-600 leading-relaxed border-t border-ink-100 pt-3">
                   {faq.answer}
                 </div>
               )}

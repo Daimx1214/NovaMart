@@ -35,7 +35,7 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <ScrollToTop />
-          <div className="min-h-screen bg-slate-50 flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
+          <div className="min-h-screen bg-ink-50 flex flex-col justify-between selection:bg-brand-500 selection:text-white">
             <div>
               <Navbar />
               <main>

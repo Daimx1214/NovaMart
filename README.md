@@ -5,10 +5,33 @@
   <p align="center">
     <strong>A modern, lightning-fast, full-featured React E-Commerce Web Application built with Vite, Redux Toolkit, and Tailwind CSS.</strong>
   </p>
+
+  <p align="center">
+    <img src="https://img.shields.io/badge/Vite-8.1-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+    <img src="https://img.shields.io/badge/Redux%20Toolkit-2.0-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux Toolkit" />
+    <img src="https://img.shields.io/badge/Tailwind%20CSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge" alt="License" />
+  </p>
+
+  <br />
+
 </div>
 
 ---
 
+## 📌 Table of Contents
+
+- [🌟 Features Overview](#-features-overview)
+- [📦 Product Catalog & Categories](#-product-catalog--categories)
+- [⚡ Image Optimization & Performance](#-image-optimization--performance)
+- [🛠️ Tech Stack & Architecture](#️-tech-stack--architecture)
+- [🚀 Quick Start & Installation](#-quick-start--installation)
+- [📁 Directory Structure](#-directory-structure)
+- [🔐 Admin Credentials](#-admin-credentials)
+- [📄 License & Author](#-license--author)
+
+---
 
 ## 🌟 Features Overview
 
@@ -144,6 +167,15 @@ NovaMart/
 ├── package.json
 └── vite.config.js
 ```
+
+---
+
+## 🔐 Admin Credentials
+
+To access the **Admin Dashboard** (`/admin`) and manage products:
+
+- **Email:** `daimx1214@gmail.com`
+- **Password:** `Daimali@1214`
 
 ---
 

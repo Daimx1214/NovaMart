@@ -36,41 +36,37 @@ function Login() {
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center p-4 py-12">
-      <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">
-        {/* Left Side Aesthetic Showcase */}
-        <div className="bg-gradient-to-tr from-slate-900 via-emerald-950 to-slate-900 text-white p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden hidden md:flex">
-          <div className="relative z-10">
-            <Logo size="lg" light showSubtitle />
+      <div className="bg-white rounded-2xl border border-ink-200/90 shadow-md overflow-hidden max-w-4xl w-full grid md:grid-cols-2">
+        {/* Left Side Panel */}
+        <div className="bg-brand-50 text-ink-900 p-8 sm:p-12 flex flex-col justify-between hidden md:flex border-r border-brand-100">
+          <div>
+            <Logo size="lg" showSubtitle />
           </div>
 
-          <div className="space-y-4 relative z-10 my-auto py-8">
-            <span className="bg-emerald-500/20 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/30">
-              Welcome Back
-            </span>
-            <h2 className="text-3xl font-extrabold leading-tight">
-              Access Your Personal Orders & Wishlist
+          <div className="space-y-4 my-auto py-8">
+            <h2 className="text-3xl font-bold leading-tight font-heading text-ink-900">
+              Welcome back
             </h2>
-            <p className="text-slate-300 text-xs leading-relaxed">
-              Log in to track existing orders, review past purchases, manage your shipping profile, or manage the store catalog.
+            <p className="text-ink-600 text-sm leading-relaxed">
+              Log in to track existing orders, review past purchases, manage your shipping profile, or access store management tools.
             </p>
           </div>
 
-          <div className="relative z-10 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            ✓ Secure Store Authentication
+          <div className="pt-4 border-t border-brand-100 text-xs text-ink-500">
+            Secure store authentication
           </div>
         </div>
 
         {/* Right Side Form Panel */}
         <div className="p-8 sm:p-12 flex flex-col justify-center">
           <div className="mb-6 space-y-1">
-            <h1 className="text-2xl font-bold text-slate-800">Sign In to Your Account</h1>
-            <p className="text-xs text-slate-500">Enter your email and password below.</p>
+            <h1 className="text-2xl font-bold text-ink-900 font-heading">Sign in</h1>
+            <p className="text-xs text-ink-500">Enter your email and password below.</p>
           </div>
 
           {error && (
-            <div className="mb-4 p-3 rounded-xl bg-red-50 text-red-600 text-xs font-medium border border-red-100 flex items-center gap-2">
-              <span>⚠️</span>
-              <span>{error}</span>
+            <div className="mb-4 p-3 rounded-lg bg-rose-50 text-rose-600 text-xs font-medium border border-rose-100">
+              {error}
             </div>
           )}
 
@@ -98,18 +94,18 @@ function Login() {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-9 text-xs text-slate-400 hover:text-slate-600 font-medium"
+                className="absolute right-3 top-9 text-xs text-ink-400 hover:text-ink-600 font-medium"
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
             </div>
 
             <div className="flex items-center justify-between text-xs pt-1">
-              <label className="flex items-center gap-2 text-slate-600 cursor-pointer">
-                <input type="checkbox" className="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500" />
+              <label className="flex items-center gap-2 text-ink-600 cursor-pointer">
+                <input type="checkbox" className="rounded border-ink-300 text-brand-600 focus:ring-brand-500" />
                 <span>Remember me</span>
               </label>
-              <Link to="/faq" className="text-emerald-600 font-semibold hover:underline">
+              <Link to="/faq" className="text-brand-600 font-semibold hover:underline">
                 Forgot password?
               </Link>
             </div>
@@ -117,15 +113,15 @@ function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition-all shadow-md shadow-emerald-500/20 disabled:opacity-50 mt-2"
+              className="w-full bg-brand-600 text-white font-semibold py-3 rounded-lg hover:bg-brand-700 transition-colors shadow-xs disabled:opacity-50 mt-2 text-sm"
             >
-              {loading ? "Signing in..." : "Sign In →"}
+              {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>
 
-          <p className="mt-8 text-center text-xs text-slate-500">
+          <p className="mt-8 text-center text-xs text-ink-500">
             Don't have an account?{" "}
-            <Link to="/register" className="font-bold text-emerald-600 hover:underline">
+            <Link to="/register" className="font-bold text-brand-600 hover:underline">
               Create one now
             </Link>
           </p>

@@ -14,7 +14,7 @@ function ProtectedRoute({ children, adminOnly = false, blockAdmin = false }) {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-[60vh] text-slate-400">
+      <div className="flex justify-center items-center h-[60vh] text-ink-400">
         Loading...
       </div>
     );

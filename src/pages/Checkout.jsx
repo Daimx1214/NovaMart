@@ -85,8 +85,8 @@ function Checkout() {
   if (items.length === 0) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-20 text-center space-y-3">
-        <h2 className="text-2xl font-bold text-slate-800">Your Cart is Empty</h2>
-        <button onClick={() => navigate("/")} className="text-sm font-bold text-emerald-600 hover:underline">
+        <h2 className="text-2xl font-bold text-ink-900 font-heading">Your Cart is Empty</h2>
+        <button onClick={() => navigate("/")} className="text-sm font-semibold text-brand-600 hover:underline">
           Return to Shop
         </button>
       </div>
@@ -96,31 +96,31 @@ function Checkout() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 space-y-8">
       {/* Progress Bar */}
-      <div className="flex items-center justify-center gap-4 text-xs font-bold text-slate-400 border-b border-slate-200 pb-6">
-        <span className="text-slate-400 flex items-center gap-1.5">
-          <span className="h-6 w-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">1</span>
+      <div className="flex items-center justify-center gap-4 text-xs font-bold text-ink-400 border-b border-ink-200/80 pb-6">
+        <span className="text-ink-400 flex items-center gap-1.5">
+          <span className="h-6 w-6 rounded-full bg-ink-200 text-ink-600 flex items-center justify-center text-xs font-heading">1</span>
           Shopping Cart
         </span>
-        <span>→</span>
-        <span className="text-emerald-600 flex items-center gap-1.5">
-          <span className="h-6 w-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">2</span>
+        <span>•</span>
+        <span className="text-brand-600 flex items-center gap-1.5">
+          <span className="h-6 w-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-xs font-heading">2</span>
           Shipping & Payment
         </span>
-        <span>→</span>
+        <span>•</span>
         <span className="flex items-center gap-1.5">
-          <span className="h-6 w-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">3</span>
+          <span className="h-6 w-6 rounded-full bg-ink-200 text-ink-600 flex items-center justify-center text-xs font-heading">3</span>
           Confirmation
         </span>
       </div>
 
-      <h1 className="text-3xl font-extrabold text-slate-800 tracking-tight">Checkout Order</h1>
+      <h1 className="text-3xl font-bold text-ink-900 tracking-tight font-heading">Checkout Order</h1>
 
       <form onSubmit={handleSubmit} className="grid lg:grid-cols-3 gap-8">
         {/* Form Inputs Left Panel */}
         <div className="lg:col-span-2 space-y-6">
           {/* Contact & Shipping */}
-          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4">
-            <h2 className="font-bold text-slate-800 text-lg border-b border-slate-100 pb-3">
+          <div className="bg-white rounded-xl p-6 border border-ink-200/90 shadow-xs space-y-4">
+            <h2 className="font-bold text-ink-900 text-lg border-b border-ink-100 pb-3 font-heading">
               1. Shipping & Contact Information
             </h2>
 
@@ -138,41 +138,41 @@ function Checkout() {
           </div>
 
           {/* Payment Method Selector */}
-          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4">
-            <h2 className="font-bold text-slate-800 text-lg border-b border-slate-100 pb-3">
+          <div className="bg-white rounded-xl p-6 border border-ink-200/90 shadow-xs space-y-4">
+            <h2 className="font-bold text-ink-900 text-lg border-b border-ink-100 pb-3 font-heading">
               2. Select Payment Method
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-4">
               <label
                 onClick={() => setForm({ ...form, paymentMethod: "cod" })}
-                className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex items-center gap-3 ${
-                  form.paymentMethod === "cod" ? "border-emerald-600 bg-emerald-50/50" : "border-slate-200 bg-white"
+                className={`p-4 rounded-lg border cursor-pointer transition-all flex items-center gap-3 ${
+                  form.paymentMethod === "cod" ? "border-brand-600 bg-brand-50/50" : "border-ink-200 bg-white"
                 }`}
               >
-                <input type="radio" name="paymentMethod" value="cod" checked={form.paymentMethod === "cod"} onChange={() => {}} className="text-emerald-600" />
+                <input type="radio" name="paymentMethod" value="cod" checked={form.paymentMethod === "cod"} onChange={() => {}} className="text-brand-600 focus:ring-brand-500" />
                 <div>
-                  <span className="block font-bold text-slate-800 text-sm">Cash on Delivery</span>
-                  <span className="block text-xs text-slate-500">Pay cash upon parcel arrival</span>
+                  <span className="block font-bold text-ink-900 text-sm font-heading">Cash on Delivery</span>
+                  <span className="block text-xs text-ink-500">Pay cash upon parcel arrival</span>
                 </div>
               </label>
 
               <label
                 onClick={() => setForm({ ...form, paymentMethod: "card" })}
-                className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex items-center gap-3 ${
-                  form.paymentMethod === "card" ? "border-emerald-600 bg-emerald-50/50" : "border-slate-200 bg-white"
+                className={`p-4 rounded-lg border cursor-pointer transition-all flex items-center gap-3 ${
+                  form.paymentMethod === "card" ? "border-brand-600 bg-brand-50/50" : "border-ink-200 bg-white"
                 }`}
               >
-                <input type="radio" name="paymentMethod" value="card" checked={form.paymentMethod === "card"} onChange={() => {}} className="text-emerald-600" />
+                <input type="radio" name="paymentMethod" value="card" checked={form.paymentMethod === "card"} onChange={() => {}} className="text-brand-600 focus:ring-brand-500" />
                 <div>
-                  <span className="block font-bold text-slate-800 text-sm">Credit / Debit Card</span>
-                  <span className="block text-xs text-slate-500">Visa, MasterCard, UnionPay</span>
+                  <span className="block font-bold text-ink-900 text-sm font-heading">Credit / Debit Card</span>
+                  <span className="block text-xs text-ink-500">Visa, MasterCard, UnionPay</span>
                 </div>
               </label>
             </div>
 
             {form.paymentMethod === "card" && (
-              <div className="pt-4 border-t border-slate-100 space-y-4">
+              <div className="pt-4 border-t border-ink-100 space-y-4">
                 <CustomInput id="cardNumber" name="cardNumber" label="Card Number" placeholder="4000 1234 5678 9010" value={form.cardNumber} onChange={handleChange} error={errors.cardNumber} />
                 <div className="grid grid-cols-2 gap-4">
                   <CustomInput id="expiry" name="expiry" label="Expiry (MM/YY)" placeholder="12/28" value={form.expiry} onChange={handleChange} error={errors.expiry} />
@@ -185,40 +185,40 @@ function Checkout() {
 
         {/* Right Summary Panel */}
         <div className="space-y-4">
-          <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm space-y-4 sticky top-24">
-            <h2 className="font-bold text-slate-800 text-lg border-b border-slate-100 pb-3">Items Review</h2>
+          <div className="bg-white rounded-xl p-6 border border-ink-200/90 shadow-xs space-y-4 sticky top-24">
+            <h2 className="font-bold text-ink-900 text-lg border-b border-ink-100 pb-3 font-heading">Items Review</h2>
 
             <div className="space-y-3 max-h-60 overflow-y-auto pr-1">
               {items.map((i) => (
                 <div key={i.productId} className="flex justify-between items-center text-xs">
-                  <span className="line-clamp-1 font-medium text-slate-700">{i.title} × {i.quantity}</span>
-                  <span className="font-bold text-slate-900">Rs. {(i.price * i.quantity).toLocaleString()}</span>
+                  <span className="line-clamp-1 font-medium text-ink-700">{i.title} × {i.quantity}</span>
+                  <span className="font-bold text-ink-900 font-heading">Rs. {(i.price * i.quantity).toLocaleString()}</span>
                 </div>
               ))}
             </div>
 
-            <div className="space-y-2 text-xs text-slate-600 pt-3 border-t border-slate-100">
+            <div className="space-y-2 text-xs text-ink-600 pt-3 border-t border-ink-100">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span className="font-semibold text-slate-800">Rs. {subtotal.toLocaleString()}</span>
+                <span className="font-semibold text-ink-700 font-heading">Rs. {subtotal.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
                 <span>Shipping</span>
-                <span className="font-semibold text-slate-800">{shipping === 0 ? "FREE" : `Rs. ${shipping}`}</span>
+                <span className="font-semibold text-ink-700 font-heading">{shipping === 0 ? "FREE" : `Rs. ${shipping}`}</span>
               </div>
             </div>
 
-            <div className="border-t border-slate-100 pt-3 flex justify-between items-baseline">
-              <span className="font-extrabold text-slate-800 text-sm">Total Payable</span>
-              <span className="font-extrabold text-emerald-600 text-xl">Rs. {total.toLocaleString()}</span>
+            <div className="border-t border-ink-100 pt-3 flex justify-between items-baseline">
+              <span className="font-bold text-ink-900 text-sm font-heading">Total Payable</span>
+              <span className="font-bold text-brand-600 text-xl font-heading">Rs. {total.toLocaleString()}</span>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-md shadow-emerald-500/20 disabled:opacity-50 text-sm"
+              className="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-lg transition-colors text-sm"
             >
-              {loading ? "Processing Order..." : "Confirm & Place Order →"}
+              {loading ? "Processing Order..." : "Confirm & Place Order"}
             </button>
           </div>
         </div>

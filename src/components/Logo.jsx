@@ -16,7 +16,7 @@ function Logo({ size = "md", showSubtitle = false, light = false }) {
   return (
     <Link to="/" className="inline-flex items-center gap-2.5 group focus:outline-none">
       <div
-        className={`${iconSizes[size]} rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 p-2 shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center`}
+        className={`${iconSizes[size]} rounded-md bg-brand-700 p-2 group-hover:bg-brand-600 transition-colors duration-200 flex items-center justify-center`}
       >
         <svg
           viewBox="0 0 24 24"
@@ -35,15 +35,15 @@ function Logo({ size = "md", showSubtitle = false, light = false }) {
 
       <div className="flex flex-col">
         <span
-          className={`${textSizes[size]} font-extrabold tracking-tight ${
-            light ? "text-white" : "text-slate-800"
+          className={`${textSizes[size]} font-bold font-heading tracking-tight ${
+            light ? "text-white" : "text-ink-900"
           }`}
         >
-          Nova<span className="text-emerald-600 group-hover:text-emerald-500 transition-colors">Mart</span>
+          Nove<span className="text-brand-600 group-hover:text-brand-500 transition-colors">Mart</span>
         </span>
         {showSubtitle && (
-          <span className={`text-[10px] uppercase font-semibold tracking-wider -mt-1 ${light ? "text-slate-300" : "text-slate-400"}`}>
-            Premium Retail Store
+          <span className={`text-[10px] uppercase font-semibold tracking-wider -mt-1 ${light ? "text-ink-300" : "text-ink-400"}`}>
+            Curated Lifestyle Store
           </span>
         )}
       </div>

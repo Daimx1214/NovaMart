@@ -17,15 +17,40 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-10 border-t border-slate-800 mt-20">
+    <footer className="bg-ink-50 text-ink-700 pt-14 pb-8 border-t border-ink-150 mt-20">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Newsletter strip — the one bold moment in the footer */}
+        <div className="bg-white border border-ink-200 rounded-xl p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 mb-12">
+          <div>
+            <h4 className="font-semibold text-ink-900 font-heading text-lg">Get first look at new arrivals</h4>
+            <p className="text-sm text-ink-500 mt-1">One email a week — launches, restocks, and occasional discount codes.</p>
+          </div>
+
+          <form onSubmit={handleSubscribe} className="flex w-full md:w-auto gap-2">
+            <input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="px-4 py-2.5 bg-white border border-ink-300 text-ink-900 rounded-md text-sm outline-none focus:border-brand-600 w-full md:w-64"
+              required
+            />
+            <button
+              type="submit"
+              className="px-5 py-2.5 bg-brand-700 text-white rounded-md text-sm font-semibold hover:bg-brand-600 transition-colors flex-shrink-0"
+            >
+              {subscribed ? "Subscribed" : "Subscribe"}
+            </button>
+          </form>
+        </div>
+
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-10 border-b border-ink-150">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Logo size="md" light showSubtitle />
-            <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-              Discover high-quality products curated for durability, style, and everyday functionality. Shop electronics, fashion, footwear, beauty, and home essentials at NovaMart with fast express delivery.
+            <Logo size="md" showSubtitle />
+            <p className="text-sm text-ink-500 leading-relaxed max-w-sm">
+              Curated electronics, fashion, footwear, beauty, and home essentials — picked for durability and everyday use, delivered fast across Pakistan.
             </p>
             <div className="flex items-center gap-3 pt-2">
               {[
@@ -62,7 +87,7 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="h-9 w-9 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-emerald-600 transition-all flex items-center justify-center"
+                  className="h-9 w-9 rounded-md bg-white text-ink-500 hover:text-brand-700 hover:border-brand-600 transition-colors flex items-center justify-center border border-ink-200"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                     {s.path}
@@ -74,68 +99,43 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-white text-sm tracking-wider uppercase mb-4">Quick Links</h4>
-            <ul className="space-y-2.5 text-sm text-slate-400">
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">Shop Catalog</Link></li>
-              <li><Link to="/about" className="hover:text-emerald-400 transition-colors">About NovaMart</Link></li>
-              <li><Link to="/contact" className="hover:text-emerald-400 transition-colors">Contact Us</Link></li>
-              <li><Link to="/faq" className="hover:text-emerald-400 transition-colors">Help Center & FAQ</Link></li>
+            <h4 className="font-semibold text-ink-900 text-sm mb-4 font-heading">Shop</h4>
+            <ul className="space-y-2.5 text-sm text-ink-500">
+              <li><Link to="/" className="hover:text-brand-700 transition-colors">Catalog</Link></li>
+              <li><Link to="/about" className="hover:text-brand-700 transition-colors">About NoveMart</Link></li>
+              <li><Link to="/contact" className="hover:text-brand-700 transition-colors">Contact Us</Link></li>
+              <li><Link to="/faq" className="hover:text-brand-700 transition-colors">Help Center</Link></li>
             </ul>
           </div>
 
           {/* Categories */}
           <div>
-            <h4 className="font-semibold text-white text-sm tracking-wider uppercase mb-4">Top Categories</h4>
-            <ul className="space-y-2.5 text-sm text-slate-400">
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">Electronics</Link></li>
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">Fashion & Apparel</Link></li>
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">Footwear & Shoes</Link></li>
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">Home & Kitchen</Link></li>
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">Beauty & Personal Care</Link></li>
+            <h4 className="font-semibold text-ink-900 text-sm mb-4 font-heading">Categories</h4>
+            <ul className="space-y-2.5 text-sm text-ink-500">
+              <li><Link to="/" className="hover:text-brand-700 transition-colors">Electronics</Link></li>
+              <li><Link to="/" className="hover:text-brand-700 transition-colors">Fashion & Apparel</Link></li>
+              <li><Link to="/" className="hover:text-brand-700 transition-colors">Footwear & Shoes</Link></li>
+              <li><Link to="/" className="hover:text-brand-700 transition-colors">Home & Kitchen</Link></li>
+              <li><Link to="/" className="hover:text-brand-700 transition-colors">Beauty & Personal Care</Link></li>
             </ul>
           </div>
 
           {/* Customer Policies */}
           <div>
-            <h4 className="font-semibold text-white text-sm tracking-wider uppercase mb-4">Policies & Support</h4>
-            <ul className="space-y-2.5 text-sm text-slate-400">
-              <li><Link to="/privacy" className="hover:text-emerald-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-emerald-400 transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/faq" className="hover:text-emerald-400 transition-colors">Shipping & Returns</Link></li>
-              <li><Link to="/orders" className="hover:text-emerald-400 transition-colors">Track Order</Link></li>
+            <h4 className="font-semibold text-ink-900 text-sm mb-4 font-heading">Support</h4>
+            <ul className="space-y-2.5 text-sm text-ink-500">
+              <li><Link to="/privacy" className="hover:text-brand-700 transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-brand-700 transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/faq" className="hover:text-brand-700 transition-colors">Shipping & Returns</Link></li>
+              <li><Link to="/orders" className="hover:text-brand-700 transition-colors">Track Order</Link></li>
             </ul>
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="py-8 border-b border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h4 className="font-semibold text-white">Subscribe to NovaMart Exclusive Offers</h4>
-            <p className="text-sm text-slate-400 mt-1">Get updates on new product launches, secret sales, and discount codes.</p>
-          </div>
-
-          <form onSubmit={handleSubscribe} className="flex w-full md:w-auto gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="px-4 py-2.5 bg-slate-800 border border-slate-700 text-white rounded-lg text-sm outline-none focus:border-emerald-500 w-full md:w-64"
-              required
-            />
-            <button
-              type="submit"
-              className="px-5 py-2.5 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-500 transition-colors flex-shrink-0"
-            >
-              {subscribed ? "Subscribed! 🎉" : "Subscribe"}
-            </button>
-          </form>
-        </div>
-
         {/* Bottom Credits */}
-        <div className="pt-8 text-center text-xs">
-          <p className="text-slate-400 font-medium">
-            © {new Date().getFullYear()} NovaMart. All rights reserved.
+        <div className="pt-6 text-center text-xs">
+          <p className="text-ink-400 font-medium">
+            © {new Date().getFullYear()} NoveMart. All rights reserved.
           </p>
         </div>
       </div>

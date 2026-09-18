@@ -1,52 +1,62 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+  /* INK — warm charcoal neutral scale (replaces default slate/gray) */
+  --color-ink-950: #1C1B18;
+  --color-ink-900: #2B2A25;
+  --color-ink-700: #4A473F;
+  --color-ink-600: #605C52;
+  --color-ink-500: #7A7568;
+  --color-ink-400: #9C9688;
+  --color-ink-300: #C4BEAF;
+  --color-ink-200: #DEDACD;
+  --color-ink-150: #EAE7DC;
+  --color-ink-100: #F1EFE7;
+  --color-ink-50: #F8F7F2;
+
+  /* BRAND — deep teal, NoveMart's own accent (not emerald, not terracotta) */
+  --color-brand-900: #0A3D38;
+  --color-brand-700: #0D5A52;
+  --color-brand-600: #116E64;
+  --color-brand-500: #17877A;
+  --color-brand-100: #DCEEEA;
+  --color-brand-50: #F1F8F6;
+
+  /* CLAY — warm secondary accent, used sparingly (spotlight tags, prices) */
+  --color-clay-600: #B5652F;
+  --color-clay-500: #C97A3E;
+  --color-clay-100: #F6E7D8;
+  --color-clay-50: #FBF3EA;
+}
+
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--color-ink-900);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
 }
 
 /*
   ============================================================
-  SHOPLY — COLOR SYSTEM (Tailwind palette reference)
+  NOVEMART — COLOR SYSTEM
   ============================================================
-  One consistent, e-commerce-appropriate palette is used across
-  every page. Nothing here changes Tailwind's behavior — it's a
-  reference so any future page/component stays consistent.
-
-  BRAND / PRIMARY (emerald)
-    emerald-600  -> primary actions: buttons (Add to cart, Place
-                    order, Sign up, Save), active nav/tab state,
-                    links, logo
-    emerald-700  -> hover state of primary buttons
-    emerald-50   -> soft success/info backgrounds (selected payment
-                    method, "delivered" badge, "paid" badge, success
-                    banners)
-
-  NEUTRAL / BASE (slate)
-    slate-50     -> page background
-    white        -> cards, navbar, inputs
-    slate-800    -> headings, primary text, prices
-    slate-600    -> body text
-    slate-500    -> secondary/meta text (labels, captions)
-    slate-400    -> placeholder/disabled text, subtle hints
-    slate-200/300-> borders, dividers
-    slate-100    -> subtle section backgrounds, hover backgrounds
-
-  RATINGS
-    amber-500    -> star ratings (★) everywhere (product card,
-                    product detail, reviews)
-
-  STATUS COLORS (order lifecycle — used only for status badges)
-    amber-600 / amber-50   -> pending / waiting for approval
-    blue-600 / blue-50     -> confirmed
-    indigo-600 / indigo-50 -> shipped
-    emerald-600 / emerald-50 -> delivered / paid  (matches brand)
-    red-500 / red-50       -> cancelled / errors / destructive
-                               actions (Remove, Delete, validation
-                               errors)
-
-  Rule of thumb: emerald = brand & positive/primary action,
-  slate = structure & text, amber = rating stars + "pending",
-  red = destructive/error, blue & indigo = informational order
-  states only.
+  ink   -> structure, text, borders (warm charcoal, not cool slate)
+  brand -> primary actions, links, active states (deep teal)
+  clay  -> secondary accent, used sparingly (spotlight tags,
+           featured price callouts) — never for primary buttons
+  amber -> rating stars only
+  Status badges: amber = pending, sky = confirmed/shipped,
+  brand = delivered/paid, red = cancelled/errors
   ============================================================
 */

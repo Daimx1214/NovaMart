@@ -28,7 +28,6 @@
 - [🛠️ Tech Stack & Architecture](#️-tech-stack--architecture)
 - [🚀 Quick Start & Installation](#-quick-start--installation)
 - [📁 Directory Structure](#-directory-structure)
-- [🔐 Admin Credentials](#-admin-credentials)
 - [📄 License & Author](#-license--author)
 
 ---
@@ -168,16 +167,6 @@ NovaMart/
 └── vite.config.js
 ```
 
----
-
-## 🔐 Admin Credentials
-
-To access the **Admin Dashboard** (`/admin`) and manage products:
-
-- **Email:** `daimx1214@gmail.com`
-- **Password:** `Daimali@1214`
-
----
 
 ## 📄 License & Author
 

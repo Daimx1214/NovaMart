@@ -190,3 +190,7 @@ Licensed under the **[MIT License](LICENSE)**.
 <div align="center">
   <sub>Built with Antigravity & React. Guaranteed 100% accurate images & ultra-fast CDN loading.</sub>
 </div>
+
+## Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Daim_Ali-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/daimx1214/)
